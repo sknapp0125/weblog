@@ -5,14 +5,18 @@ class PostsController < ApplicationController
 
   # to create new posts
   def new
+    @post = Post.new
   end
 
   # to save posts
   def create
     @post = Post.new(post_params)
-    @post.save
 
-    redirect_to @post
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
+    end
   end
 
   # defining a post
@@ -22,9 +26,9 @@ class PostsController < ApplicationController
 
 
   private
-    def post_params
-      params.require(:post).permit(:title, :body)
-    end
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
 
 
 end
