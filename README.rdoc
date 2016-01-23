@@ -1,7 +1,3 @@
 == Weblog
 
 Created in Ruby on Rails 
-
-Based on the tutorial by Mackenzie Child
-
-http://mackenziechild.me/12-in-12/2/
